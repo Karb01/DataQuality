@@ -1,0 +1,102 @@
+# 🧪 Data Quality Validator
+
+Este projeto tem como objetivo realizar validações automáticas de qualidade em arquivos `.xlsx` (Excel) com dados, aplicando regras específicas de negócio e estrutura.
+
+---
+
+## 📂 Estrutura do Projeto
+
+```
+Data_Quality/
+├── Main_Data_Quality.py             # Arquivo principal que executa todas as validações
+├── ManipulaArquivo.py               # Responsável por carregar e mover arquivos
+├── Valida_Bac.py                    # Valida campo BAC
+├── Valida_Campos_Obrigatorios.py   # Verifica se campos essenciais estão presentes
+├── Valida_Colunas_Novas.py         # Detecta colunas inesperadas
+├── Valida_ddi_telefone.py          # Verifica se DDI é compatível com o telefone
+├── Valida_Duplicatas.py            # Verifica duplicações de registros
+├── Valida_Nota.py                  # Verifica se as notas estão dentro do intervalo válido
+└── Processados/                    # Pasta onde arquivos processados são movidos
+```
+
+---
+
+## ⚙️ Como usar
+
+1. Coloque o(s) arquivo(s) `.xlsx` que deseja validar dentro da pasta `Data_Quality`.
+
+2. Execute o script principal:
+
+```bash
+python Main_Data_Quality.py
+```
+
+3. O sistema:
+   - Carrega o primeiro arquivo Excel encontrado
+   - Executa todas as validações
+   - Imprime os resultados
+   - Move o arquivo para a pasta `Processados`
+
+---
+
+## ✅ Regras de Validação
+
+- **BAC**: Deve conter apenas números, no máximo 6 dígitos.
+- **Campos obrigatórios**: Ex: VIN, CPF, STATUS, etc.
+- **Colunas novas**: São sinalizadas caso não estejam no modelo esperado.
+- **DDI vs. Telefone**: Confere se o DDI é coerente com o país.
+- **Duplicatas**: Identifica linhas repetidas.
+- **Notas**: Valores devem estar entre 0 e 10, sem valores negativos.
+
+---
+
+## 🛠️ Requisitos
+
+- Python 3.10 ou superior
+- Bibliotecas utilizadas:
+  - `pandas`
+  - `numpy`
+  - `openpyxl`
+  - `re`
+  - `shutil`
+  - `os`
+
+Instale os pacotes com:
+
+```bash
+pip install -r requirements.txt
+```
+
+> Crie o arquivo `requirements.txt` com:
+
+```txt
+pandas
+numpy
+openpyxl
+```
+
+---
+
+## 🧼 Git e .gitignore
+
+Certifique-se de que o `.gitignore` contenha:
+
+```gitignore
+__pycache__/
+*.pyc
+*.xlsx
+Processados/
+```
+
+---
+
+## 🧑‍💻 Autor
+
+Desenvolvido por Kaynan Ribeiro  
+📧 kaynan@example.com
+
+---
+
+## 📄 Licença
+
+Este projeto está licenciado sob a [MIT License](LICENSE).
