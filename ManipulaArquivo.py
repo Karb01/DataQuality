@@ -5,6 +5,15 @@ import re
 import shutil
 
 def carregar(caminho_pasta):
+    """
+        Busca os arquivos em uma pasta:
+
+        Args:
+            caminho_pasta(str): Caminho completo do arquivo
+        Returns:
+            Nome_arquivo(str): O nome dos arquivos encontrados na pasta 
+    """
+
     arquivos = [f for f in os.listdir(caminho_pasta) if f.endswith('.xlsx')]
 
     if not arquivos:
@@ -19,6 +28,15 @@ def carregar(caminho_pasta):
     return df, caminho_arquivo,arquivo
 
 def mover_arquivo(origem, destino):
+
+    """
+        Move um arquivo em uma pasta para outra:
+
+        Args:
+            Origem(str): O Caminho completo do arquivo aonde ele está
+            Destino(str): O Caminho para onde o arquivo vai ser enviado             
+    """
+
     if not os.path.exists(destino):
         os.makedirs(destino)
     
