@@ -67,8 +67,8 @@ def enviar_email(metodos_com_erro: dict, nome_arquivo: str):
 
 
 def main():
-    pasta_origem = 'C:\\Users\\Kaynan Ribeiro\\Desktop\\Git\\Data_Quality_Homolog\\'
-    pasta_destino = 'C:\\Users\\Kaynan Ribeiro\\Desktop\\Git\\Data_Quality_Homolog\\Processados'
+    pasta_origem = 'C:\\Users\\Kaynan Ribeiro\\Desktop\\Git\\Data_Quality\\'
+    pasta_destino = 'C:\\Users\\Kaynan Ribeiro\\Desktop\\Git\\Data_Quality\\Processados'
     colunas_obrigatorias = ['TicketID', 'Data', 'Telefone', 'Dealer']
     colunas_esperadas = ['data', 'telefone', 'bac', 'dealer', 'nota', 'resposta', 'comentario', 'ticketid']
 
