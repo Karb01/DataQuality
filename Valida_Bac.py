@@ -4,6 +4,15 @@ import numpy as np
 import re
 
 def validar_bac(df):
+    """
+        Valida se todos os BACs do arquivo estão preenchidos corretamentes:
+
+        Args:
+            DataFrame(df): O dataframe do arquivo
+        Returns:
+            bool(int): Retorna 1 se foi encontrado erros no BAC e 0 se nenhum erro foi encontrado 
+    """
+
     if 'Bac' not in df.columns:
         return 1
 

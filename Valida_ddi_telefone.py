@@ -13,6 +13,15 @@ ddi_por_pais = {
 }
 
 def extrair_pais_do_arquivo(nome_arquivo):
+    """
+        Extrai o pais a partir do nome do arquivo:
+
+        Args:
+            Nome_arquivo(str): Passado o nome do arquivo 
+        Returns:
+            Pais(str): Retorna o nome do pais caso encontrado, se não encontrado retorna nada
+    """
+
     for pais in ddi_por_pais.keys():
         if pais in nome_arquivo.lower():
             return pais
@@ -20,6 +29,16 @@ def extrair_pais_do_arquivo(nome_arquivo):
 
 
 def validar_ddi_telefone(df, nome_arquivo):
+    """
+        Valida se o DDI está coerente com o pais no qual o numero foi enviado:
+
+        Args:
+            DataFrame(df): O dataframe do arquivo
+            Nome_arquivo(str): Passado o nome do arquivo
+        Returns:
+            Pais(str): Retorna 1 caso seja identificado algum numero com o DDI diferente do pais no qual ele foi enviado, e 0 caso não seja identificado nenhum erro. 
+    """
+
     pais = extrair_pais_do_arquivo(nome_arquivo)
     
     if pais is None:
