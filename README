@@ -6,6 +6,7 @@ Este projeto tem como objetivo realizar validações automáticas de qualidade e
 
 ## 📂 Estrutura do Projeto
 
+
 ```
 Data_Quality/
 ├── Main_Data_Quality.py             # Arquivo principal que executa todas as validações

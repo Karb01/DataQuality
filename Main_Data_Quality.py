@@ -2,7 +2,6 @@ import os
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
-
 from Valida_Bac import validar_bac
 from Valida_Campos_Obrigatorios import validar_campos_obrigatorios
 from Valida_Colunas_novas import validar_colunas_novas
@@ -13,10 +12,10 @@ from ManipulaArquivo import carregar, mover_arquivo
 
 
 def enviar_email(metodos_com_erro: dict, nome_arquivo: str):
-    remetente = "noreply@exata.email"
-    destinatario = "kaynan.baptista@exata.it"
-    servidor_smtp = "10.84.22.248"
-    porta = 25
+    remetente = "GENERICO@GENERICO.IT"
+    destinatario = "SEUEMAIL@EMAUL.COM"
+    servidor_smtp = ""
+    porta = 00
     usar_auth = False  # <- seu caso
     usar_tls = False   # <- seu caso
 
